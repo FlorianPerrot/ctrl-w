@@ -45,7 +45,7 @@ Main.k.website = "http://ks26782.kimsufi.com/ctrlw";
 
 Main.k.servurl = "http://ctrl-w.badconker.com";
 Main.k.servurl_badconker = 'http://ctrlw.badconker.com';
-Main.k.servhost = 'file:///mnt/Données/Developpement/ctrl-w/build';
+Main.k.servhost = '{{ SERVER_HOST }}';
 
 Main.k.window = window;
 Main.k.domain = document.domain;
