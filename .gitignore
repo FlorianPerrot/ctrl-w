@@ -1,0 +1,6 @@
+.settings
+.project
+.idea
+.dev
+/nbproject/
+node_modules
