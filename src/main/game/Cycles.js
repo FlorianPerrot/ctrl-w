@@ -1,5 +1,5 @@
 // Shows the actual number of remaining cycles
-Main.k.displayRemainingCyclesToNextLevel = function (){
+Main.k.Game.displayRemainingCyclesToNextLevel = function (){
     $('.levelingame').each(function(){
         var attr, xp_by_cycle;
         var regex = /(<p>.*>[^0-9]?)([0-9]+)([a-zA-Z ]*)(<)(.*<\/p>)/;
@@ -41,4 +41,22 @@ Main.k.displayRemainingCyclesToNextLevel = function (){
     if($('.levelingame_no_anim').length > 0){
         localStorage.setItem('ctrlw_remaining_cycles',0);
     }
+};
+
+Main.k.Game.updateDayAndCycle = function(day,cycle) {
+    if(day != this.data.day || cycle != this.data.cycle){
+        this.data.day = day;
+        this.data.cycle = cycle;
+        Main.k.Game.onCycleChange();
+        this.updatePlayerInfos();
+        this.save();
+    }
+};
+
+Main.k.Game.onCycleChange = function(){
+    // Script updates
+    // ----------------------------------- //
+    localStorage.removeItem('ctrlw_update_cache');
+    localStorage.removeItem('ctrlw_remaining_cycles',0);
+    // ----------------------------------- //
 };

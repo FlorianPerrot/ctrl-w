@@ -4472,13 +4472,6 @@ Main.k.tabs.playing = function() {
         $(window).resize(Main.k.Resize);
         $("#chatBlock").on("resize", Main.k.Resize);
     };
-    Main.k.onCycleChange = function(){
-        // Script updates
-        // ----------------------------------- //
-        localStorage.removeItem('ctrlw_update_cache');
-        localStorage.removeItem('ctrlw_remaining_cycles',0);
-        // ----------------------------------- //
-    };
     Main.k.MushUpdate = function() {
         console.log('mushupdate');
 
@@ -4550,7 +4543,7 @@ Main.k.tabs.playing = function() {
             $player_status = $('<div id="player_status" style="position: absolute;right:6px;bottom:0"><img src="'+Main.k.statusImages['bronze']+'" alt="Bronze" title="Bronze" /></div>').appendTo('.sheetmain');
         }
         $player_status.html('<img src="'+Main.k.statusImages[Main.k.Game.data.player_status]+'" alt="'+Main.k.Game.data.player_status.capitalize()+'" title="'+Main.k.Game.data.player_status.capitalize()+'" />');
-        Main.k.displayRemainingCyclesToNextLevel();
+        Main.k.Game.displayRemainingCyclesToNextLevel();
 
         // Titles
         // ----------------------------------- //
